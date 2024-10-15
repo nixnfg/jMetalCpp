@@ -18,12 +18,12 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include <Problem.h>
-#include <Algorithm.h>
-#include <Solution.h>
-#include <ProblemFactory.h>
+#include <Problem.h>				//抽象类
+#include <Algorithm.h>				//算法模板，metaheuristics是各类算法在改模板下的实现形式
+#include <Solution.h>				//种群或者方案，对应一组参数
+#include <ProblemFactory.h>			//这里是主要问题
 #include <iostream>
-#include <CMAES.h>
+#include <CMAES.h>					//进化策略算法，核心算法
 #include <time.h>
 
 int main(int argc, char ** argv) {

@@ -1,0 +1,30 @@
+util_root_src=files(
+    'AdaptiveGrid.cpp',
+    'AdaptiveRandomNeighborhood.cpp',
+    'Distance.cpp',
+    'NonDominatedSolutionList.cpp',
+    'PermutationUtility.cpp',
+    'PseudoRandom.cpp',
+    'RandomGenerator.cpp',
+    'Ranking.cpp',
+)
+util_root_inc = include_directories('.')
+subdir('archive')
+#util_archive_src
+#util_archive_inc
+#comparators
+#util
+subdir('comparators')
+#util_comparators_src
+#util_comparators_inc
+#core
+#util
+subdir('wrapper')
+#util_wrapper_src
+#util_wrapper_inc
+#util
+#core
+#encoding
+util_src=[util_root_src,util_archive_src,util_comparators_src,util_wrapper_src]
+util_inc=[util_root_inc,util_archive_inc,util_comparators_inc,util_wrapper_inc]
+
