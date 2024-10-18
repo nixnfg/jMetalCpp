@@ -1,0 +1,16 @@
+# mingw64
+
+meson setup build_mingw --native-file=mingw64_native.txt --verbose
+
+meson setup build_mingw --native-file=mingw64_native.txt
+
+meson compile -C build_mingw
+
+
+# msvc
+
+
+#wsl
+
+meson setup build_wsl
+

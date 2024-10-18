@@ -4,7 +4,10 @@ subdir('util')
 subdir('encodings')
 #core
 subdir('core')
+#metaheuristics
+subdir('metaheuristics')
 
+# public lib
 common_src=[core_src,encodings_src,util_src]
 common_inc=[core_inc,encodings_inc,util_inc]
 common_lib=static_library(
@@ -12,7 +15,8 @@ common_lib=static_library(
     common_src,
     include_directories:common_inc
 )
-subdir('metaheuristics/singleObjective/cmaes')
+
+# cmaes
 cmaes_lib=static_library(
     'cmaes_lib',
     meta_so_cmaes_src,
@@ -20,37 +24,10 @@ cmaes_lib=static_library(
     link_with: common_lib
 )
 
-CMAES_main_src = files('main/CMAES_main.cpp')
-CMAES_main = executable('CMAES_main', CMAES_main_src,
-           include_directories: [common_inc,meta_so_cmaes_inc],
-           link_with: cmaes_lib)
-
-# CMAES_main_src = files('main' / 'CMAES_main.cpp')
-# CMAES_main = executable('CMAES_main', CMAES_main_src,
-#            include_directories: inc_dirs,
-#            dependencies: [phys_dep, math_dep],
-#            install:true)
-
-# operators
-# operator_lib = library(
-#     'operator_lib',
-#     core_src,
-#     include_directories: core_inc)
-
-# exe = executable('main', 'main.c', link_with : lib)
-# t = executable(
-#   'main',
-#   ['main.c', 'rone.c'],
-#   include_directories : inc,
-#   implicit_include_directories : false,
-# )
-
-# experiments
-#subdir('experiments')
-
-# main
-# CMAES_main_src = files('main' / 'CMAES_main.cpp')
-# CMAES_main = executable('CMAES_main', CMAES_main_src,
-#            include_directories: inc_dirs,
-#            dependencies: [phys_dep, math_dep],
-#            install:true)
+# nsgaii
+nsgaii_lib=static_library(
+    'nsgaii_lib',
+    meta_nsgaii_src,
+    include_directories:[common_inc,meta_nsgaii_inc],
+    link_with: common_lib
+)

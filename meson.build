@@ -3,6 +3,9 @@ project('Fortran calling c and cpp', 'fortran', 'c', 'cpp',
   default_options : ['default_library=static'])
 
 subdir('src')
+subdir('test')
+
+
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # ccid = meson.get_compiler('c').get_id()
 # if ccid == 'msvc' or ccid == 'clang-cl'

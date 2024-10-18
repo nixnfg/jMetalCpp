@@ -1,0 +1,16 @@
+[binaries]
+c = 'gcc'
+cpp = 'g++'
+ar = 'ar'
+strip = 'strip'
+pkg-config = 'pkg-config'
+windres = 'windres'
+
+[properties]
+needs_exe_wrapper = false
+
+[host_machine]
+system = 'windows'
+cpu_family = 'x86_64'
+cpu = 'x86_64'
+endian = 'little'

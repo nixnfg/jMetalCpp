@@ -46,7 +46,7 @@ set(library_target jmetal)
 add_library(${library_target} STATIC ${source_files} ${header_files})
 target_link_libraries(${library_target} PRIVATE Threads::Threads)
 target_compile_options(${library_target} PRIVATE -fPIC)
-if(MSVC) # ignore function must return a value on MSCV
+if(MSVC) # ignore function must return a value on MSVC
   target_compile_options(${library_target} PRIVATE /w34716)
 endif()
 install(TARGETS ${library_target} DESTINATION lib)
