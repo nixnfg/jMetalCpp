@@ -1,6 +1,11 @@
-project('Fortran calling c and cpp', 'fortran', 'c', 'cpp',
-  meson_version: '>= 0.51.0',
+project('jmetal-cpp', ['cpp','fortran'],
+version : '1.11',
   default_options : ['default_library=static'])
+
+#project('my_project', 'cpp',
+#    version : '0.1',
+#    default_options : ['warning_level=3',
+#                      'cpp_std=c++17'])
 
 subdir('src')
 subdir('test')

@@ -1,3 +1,16 @@
+#project('my_project', 'cpp',
+#    version : '0.1',
+#    default_options : ['warning_level=3',
+#                      'cpp_std=c++17'])
+#exe = executable('jmetal_cpp',
+#    'main.cpp')
+
+main_src = files('main.cpp')
+main = executable('jmetal_cpp', main_src,
+          include_directories: nsgaii_inc,
+          link_with: nsgaii_lib,
+          install:true)
+
 #subdir('metaheuristics/singleObjective/cmaes')
 #cmaes_lib=static_library(
 #    'cmaes_lib',

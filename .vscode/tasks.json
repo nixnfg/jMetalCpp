@@ -1,0 +1,77 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Meson: configure project",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "setup",
+                "--buildtype=debug",
+                "build_msvc",
+                "--prefix",
+                "${workspaceFolder}",
+                "--libdir",
+                "bin",
+                "--native-file",
+                "msvc-native.txt",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Meson: build project",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "compile",
+                "-C",
+                "build_msvc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Meson: configure project"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Meson: install project",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "install",
+                "-C",
+                "build_msvc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Meson: configure project"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Meson: clean project",
+            "type": "shell",
+            "command": "meson",
+            "args": [
+                "setup",
+                "--wipe",
+                "build_msvc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

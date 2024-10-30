@@ -8,7 +8,7 @@ meson compile -C build_mingw
 
 
 # msvc
-
+meson setup builddir --native-file windows-native.txt
 
 #wsl
 

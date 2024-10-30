@@ -1,2 +1,2 @@
-subdir('nsgaII')
 subdir('singleObjective')
+subdir('nsgaII')

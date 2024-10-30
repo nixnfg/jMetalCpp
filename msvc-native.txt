@@ -1,0 +1,30 @@
+[binaries]
+# Intel oneAPI C 编译器
+#c = 'icx'
+# Intel oneAPI C++ 编译器
+cpp = 'icl'
+# Intel Fortran 编译器
+fortran = 'ifort'
+# Intel oneAPI 链接器
+# ar = 'xilib'
+# lib = 'xilib'
+# link = 'link'
+# mt = 'mt'
+
+#[built-in options]
+#buildtype = 'release'
+#warning_level = '2'
+## 启用 OpenMP 支持
+#fortran_args = ['-qopenmp']
+#cpp_args = ['/Qdiag-disable:10441']
+#c_args = ['-qopenmp']
+#
+#[properties]
+## Intel 特定的编译器优化标志
+#c_args = ['-O2', '-xHost']
+#cpp_args = ['-O2', '-xHost']
+#fortran_args = ['-O2', '-xHost']
+## 链接标志
+#c_link_args = []
+#cpp_link_args = []
+#fortran_link_args = []
